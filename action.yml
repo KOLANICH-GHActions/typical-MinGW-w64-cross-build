@@ -1,0 +1,20 @@
+name: typical-MinGW-w64-cross-build
+description: |
+  Cross-builds software for targets using WinAPI using MinHW-w64 + CLang.
+author: KOLANICH
+inputs: 
+  github_token:
+    description: "The GITHUB_TOKEN secret"
+  arch:
+    description: "CPU architecture"
+    default: i686
+  llvm_version:
+    description: "The version of LLVM and Clang"
+    default: 14
+
+runs:
+  using: "node12" # GitHub disallows to use anything other there
+  main: "startBash.js" # ECMA modules are not yet supported by GH Actions
+branding:
+  icon: check-square
+  color: green
